@@ -33,10 +33,12 @@
     <main class=" w-3/4 mx-auto mt-24 ">
         <h2 class="mb-4 text-3xl tracking-wide font-semibold">Kitchenware</h2>
         <div class="flex gap-4 justify-center">
+            <!-- Card Section -->
             <div>
                 <div>
+                    <!-- Kitvhenware Seciton -->
                     <div class="flex gap-4">
-                        <div class="card w-[242px] bg-base-100 shadow-xl">
+                        <div onclick="getCardText(this)" class="card w-[242px] bg-base-100 shadow-xl">
                             <figure class="px-10 pt-10 bg-gray-200 m-4 rounded">
                                 <img class="pb-4" src="/images/prod1.png" alt="Shoes" class="rounded-xl" />
                             </figure>
@@ -49,10 +51,10 @@
                                     <i class="fa-regular fa-star"></i>
                                 </h2>
                                 <p class="text-2xl font-bold">K. Accessories</p>
-                                <p class="text-2xl ">39.00 TK</p>
+                                <p class="text-2xl "><span>39.00</span> TK</p>
                             </div>
                         </div>
-                        <div class="card w-[242px] bg-base-100 shadow-xl">
+                        <div onclick="getCardText(this)" class="card w-[242px] bg-base-100 shadow-xl">
                             <figure class="px-10 pt-10 bg-gray-200 m-4 rounded">
                                 <img class="pb-7" src="/images/prod2.png" alt="Shoes" class="rounded-xl" />
                             </figure>
@@ -65,10 +67,10 @@
                                     <i class="fa-regular fa-star"></i>
                                 </h2>
                                 <p class="text-2xl font-bold">K. Accessories</p>
-                                <p class="text-2xl ">39.00 TK</p>
+                                <p class="text-2xl "><span>25.00</span> TK</p>
                             </div>
                         </div>
-                        <div class="card w-[242px] bg-base-100 shadow-xl">
+                        <div onclick="getCardText(this)" class="card w-[242px] bg-base-100 shadow-xl">
                             <figure class="px-10 pt-10 bg-gray-200 m-4 rounded">
                                 <img class="pb-8" src="/images/prod3.png" alt="Shoes" class="rounded-xl" />
                             </figure>
@@ -81,14 +83,15 @@
                                     <i class="fa-regular fa-star"></i>
                                 </h2>
                                 <p class="text-2xl font-bold">Home Cooker</p>
-                                <p class="text-2xl ">39.00 TK</p>
+                                <p class="text-2xl "><span>49.00</span> TK</p>
                             </div>
                         </div>
                     </div>
+                    <!-- Sportswear Section -->
                     <div class="mt-12 mb-5">
                         <h2 class="mb-4 text-3xl tracking-wide font-semibold">Sportswear</h2>
                         <div class="flex gap-4">
-                            <div class="card w-[242px] bg-base-100 shadow-xl">
+                            <div onclick="getCardText(this)" class="card w-[242px] bg-base-100 shadow-xl">
                                 <figure class="px-10 pt-10 bg-gray-200 m-4 rounded">
                                     <img class="pt-4 pb-12" src="/images/prod4.png" alt="Shoes" class="rounded-xl" />
                                 </figure>
@@ -101,10 +104,10 @@
                                         <i class="fa-regular fa-star"></i>
                                     </h2>
                                     <p class="text-2xl font-bold">Sports Back</p>
-                                    <p class="text-2xl ">39.00 TK</p>
+                                    <p class="text-2xl "><span>49.00</span> TK</p>
                                 </div>
                             </div>
-                            <div class="card w-[242px] bg-base-100 shadow-xl">
+                            <div onclick="getCardText(this)" class="card w-[242px] bg-base-100 shadow-xl">
                                 <figure class="px-10 pt-10 bg-gray-200 m-4 rounded">
                                     <img class="pb-5" src="/images/prod5.png" alt="Shoes" class="rounded-xl" />
                                 </figure>
@@ -117,10 +120,10 @@
                                         <i class="fa-regular fa-star"></i>
                                     </h2>
                                     <p class="text-2xl font-bold">Full Jersey Set</p>
-                                    <p class="text-2xl ">39.00 TK</p>
+                                    <p class="text-2xl "><span>69.00</span> TK</p>
                                 </div>
                             </div>
-                            <div class="card w-[242px] bg-base-100 shadow-xl">
+                            <div onclick="getCardText(this)" class="card w-[242px] bg-base-100 shadow-xl">
                                 <figure class="px-10 pt-10 bg-gray-200 m-4 rounded">
                                     <img class="pb-7" src="/images/prod6.png" alt="Shoes" class="rounded-xl" />
                                 </figure>
@@ -133,52 +136,74 @@
                                         <i class="fa-regular fa-star"></i>
                                     </h2>
                                     <p class="text-2xl font-bold">Sports cates</p>
-                                    <p class="text-2xl ">39.00 TK</p>
+                                    <p class="text-2xl "><span>159.00</span> TK</p>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
+            <!-- Cart Section -->
+            <div id="cart-section">
                 <div class="rounded-xl pl-3 py-6 w-[242px] bg-base-100 shadow-xl">
                     <h2 class="mb-4 text-2xl tracking-wide font-semibold">Have coupon?</h2>
                     <div>
-                        <input class="py-2 border border-gray-400 rounded px-4 w-40" type="text" placeholder="Coupon code">
-                        <button class="rounded-r-lg bg-pink-500 py-2 px-3 border border-pink-500 -ml-3 text-white">Apply</button>
+                        <input id="coupon-code" class="py-2 border border-gray-400 rounded-l-lg px-4 w-36" type="text"
+                            placeholder="Coupon code">
+                        <button onclick="getApply(this)" id="apply-btn"
+                            class="rounded-r-lg bg-pink-500 py-2 px-3 border border-pink-500 -ml-[4.5px] text-white">Apply</button>
                     </div>
                 </div>
                 <div class="rounded-xl mt-5 pl-3 pt-6 pb-4 w-[242px] bg-base-100 shadow-xl">
-                   <div class="h-24 overflow-y-auto">
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                        <p>Home Cooker</p>
-                   </div>
-                   <hr class="my-5 w-56">
-                   <div >
-                    <p class="text-xl font-semibold">Total Price: <span class="font-normal"><span> 00.00</span> Tk</span></p>
+                    <div class="h-24 overflow-y-auto">
+                        <ol id="show-title-container" class="list-decimal pl-6 text-xl">
 
-                    <p class="text-xl font-semibold my-3">Discount: <span class="font-normal"><span> 00.00</span> Tk</span></p>
+                        </ol>
+                    </div>
+                    <hr class="my-5 w-56">
+                    <div>
+                        <p class="text-xl font-semibold">Total Price: <span class="font-normal"><span id="total-price">
+                                    00.00</span> Tk</span></p>
 
-                    <p class="text-xl font-semibold">Total: <span class="font-normal"><span> 00.00</span> Tk</span></p>
-                   </div>
+                        <p class="text-xl font-semibold my-3">Discount: <span class="font-normal"><span id="discount">
+                                    00.00</span> Tk</span></p>
 
-                   <hr class="mt-5 mb-4 w-56">
-                   <button class="btn bg-pink-500 w-56 text-white">Make Purchase</button>
+                        <p class="text-xl font-semibold">Total: <span class="font-normal"><span id="total"> 00.00</span>
+                                Tk</span></p>
+                    </div>
+
+                    <hr class="mt-5 mb-4 w-56">
+                    <div class="card-actions">
+                        <!-- Open the modal using ID.showModal() method -->
+                        <button onclick="my_modal_1.showModal()" id="make-purchase"
+                            class="btn hover:bg-pink-500 disabled:opacity-100 bg-pink-500 w-56 text-white" disabled>Make
+                            Purchase</button>
+                        <dialog id="my_modal_1" class="modal">
+                            <form method="dialog" class="modal-box flex justify-center items-center rounded-xl w-[370px] h-[440px] ">
+                               <div>
+                                <figure class="px-5 pt-5 flex justify-center items-center">
+                                    <img src="./images/congo.png" alt="Shoes" class="rounded-xl" />
+                                </figure>
+                                <div class="card-body items-center text-center">
+                                    <h2 class=" text-3xl font-bold">Congratulations</h2>
+
+                                    <p class="my-3">Your Purchase the product</p>
+
+                                    <div class="flex justify-center items-center gap-5">
+                                        <button id="go-home" class="btn bg-pink-500 text-white">Go Home</button>
+                                    </div>
+                                </div>
+                               </div>
+                            </form>
+                        </dialog>
+                    </div>
                 </div>
+                <!-- <button id="make-purchase" class="btn hover:bg-pink-500 disabled:opacity-100 bg-pink-500 w-56 text-white" disabled>Make Purchase</button> -->
+
             </div>
         </div>
     </main>
-
-
 
     <script src="js/index.js"></script>
 </body>
