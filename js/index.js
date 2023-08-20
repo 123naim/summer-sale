@@ -21,7 +21,8 @@ function getCardText(target) {
 
     // Calculate Card Price and  Previos Total Price
     const totalPrice = getCardPriceNumber + getPreviousTotalPriceNumber;
-    getPreviousTotalPrice.innerText = totalPrice;
+    const toFixedTotalPrice = totalPrice.toFixed(2)
+    getPreviousTotalPrice.innerText = toFixedTotalPrice;
 
     // Get Total
     const getPreviousTotal = document.getElementById('total');
@@ -29,10 +30,11 @@ function getCardText(target) {
     const getPreviousTotalNumber = parseFloat(getPreviousTotalString);
 
     // Calculate Tatal and Card Price
-    // const total = getCardPriceNumber + getPreviousTotalNumber;
-    // getPreviousTotal.innerText = total;
+    const total = getCardPriceNumber + getPreviousTotalNumber;
+    const toFixedTotal = total.toFixed(2);
+    getPreviousTotal.innerText = toFixedTotal;
 
-    // Get Make Purchase Button and disable set
+    // Get Make Purchase Button and enabled set
     const getMakePurchaseBtn = document.getElementById('make-purchase');
     if (totalPrice > 0) {
         getMakePurchaseBtn.disabled = false;
@@ -44,10 +46,6 @@ function getCardText(target) {
     if (totalPrice >= 200) {
         applyBtn.classList.remove('cursor-not-allowed', 'opacity-50', 'pointer-events-none');
     }
-    else {
-        const total = getCardPriceNumber + getPreviousTotalNumber;
-        getPreviousTotal.innerText = total;
-    }
 }
 
 
@@ -57,7 +55,6 @@ function getApply(target) {
     const getCouponInputValue = getCouponInputField.value;
     console.log(getCouponInputValue)
 
-
     if (getCouponInputValue === 'SELL200') {
         // get total price
         const getTotalPrice = document.getElementById('total-price');
@@ -66,24 +63,19 @@ function getApply(target) {
 
         // get discount tk
         const getPreviousDiscount = document.getElementById('discount');
-        // const getPreviousDiscountString = getPreviousDiscount.innerText;
-        // const getPreviousDiscountNumber = parseFloat(getPreviousDiscountString);
-        // console.log(getTotalPriceNumber)
 
         // Calculate the Discount number 
         const discount = (20 / 100) * getTotalPriceNumber;
-        getPreviousDiscount.innerText = discount;
+        const toFixedDiscount = discount.toFixed(2);
+        getPreviousDiscount.innerText = toFixedDiscount;
 
         // get total
         const getTotal = document.getElementById('total');
-        console.log(getTotal);
-        const getTatalString = getTotal.innerText;
-        const getTotalNumber = parseFloat(getTatalString);
 
         // calculate total
         const total = getTotalPriceNumber - discount;
-
-        getTotal.innerText = total;
+        const toFixedTotal = total.toFixed(2);
+        getTotal.innerText = toFixedTotal;
     }
 }
 
