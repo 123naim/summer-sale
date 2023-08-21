@@ -80,18 +80,7 @@ function getApply(target) {
 }
 
 document.getElementById('go-home').addEventListener('click', function () {
-    const getShowCartOption = document.getElementById('show-title-container');
-    getShowCartOption.innerText = '';
-    const getCouponInputField = document.getElementById('coupon-code');
-    getCouponInputField.value = '';
-    refreshPage('total-price')
-    refreshPage('discount')
-    refreshPage('total')
+    window.location.reload();
 })
-
-function refreshPage(elementId) {
-    const getId = document.getElementById(elementId);
-    getId.innerText = '00.00'
-}
 
 
